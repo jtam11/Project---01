@@ -1,0 +1,17 @@
+body {
+  background-color: purple;
+  color: white;
+}
+
+p {
+  text-align: center;
+  font-size: 100px;
+}
+
+#blarg {
+  color: black;
+}
+
+#blargAppend {
+  color: pink;
+}
