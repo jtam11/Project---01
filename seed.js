@@ -30,6 +30,8 @@ db.Clothes.remove({}, function(err, clothes){
 
   db.Clothes.create(clothesList, function(err, clothes){
     if (err) { return console.log('ERROR', err); }
+    console.log("all clothes:", clothes);
+    console.log("created", clothes.length, "clothes");
     process.exit();
   });
 

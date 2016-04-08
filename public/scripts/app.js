@@ -45,11 +45,9 @@ $(document).ready(function() {
   console.log('app.js loaded!');
 
   $.get('/api/clothes').success(function (clothes) {
-    clothes.forEach(function(clothes) {
       renderClothes(clothes);
     });
-  });
-  
+
 });
 
 function renderClothes(clothes) {

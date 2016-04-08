@@ -10,6 +10,6 @@ var ClothesSchema = new Schema ({
   dirty: Boolean
 });
 
-var Clothes = ('Clothes', ClothesSchema);
+var Clothes = mongoose.model('Clothes', ClothesSchema);
 
 module.exports = Clothes;
