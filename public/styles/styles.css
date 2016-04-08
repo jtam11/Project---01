@@ -1,17 +1,50 @@
 body {
-  background-color: purple;
+  background-image: url(https://snap-photos.s3.amazonaws.com/img-thumbs/960w/D1B0FAEB46.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
 }
 
-p {
+h1 {
   text-align: center;
   font-size: 100px;
 }
 
-#blarg {
+#wear {
   color: black;
 }
 
-#blargAppend {
-  color: pink;
+.panel {
+  border: 0;
+  background-color: transparent;
+}
+.panel-footer {
+  padding-top: 20px;
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+}
+#hats-carousel img {
+  width: auto;
+  height: 90px;
+  margin: 0 auto;
+}
+
+#tops-carousel img {
+  width: auto;
+  height: 200px;
+  margin: 0 auto;
+}
+
+#bottoms-carousel img {
+  width: auto;
+  height: 200px;
+  margin: 0 auto;
+}
+
+#shoes-carousel img {
+  width: auto;
+  height: 95px;
+  margin: 0 auto;
 }
