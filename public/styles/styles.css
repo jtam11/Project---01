@@ -26,25 +26,34 @@ h1 {
   text-align: center;
 }
 #hats-carousel img {
+  padding-top: 20px;
   width: auto;
   height: 90px;
   margin: 0 auto;
 }
 
 #tops-carousel img {
+  padding-top: 20px;
   width: auto;
   height: 200px;
   margin: 0 auto;
 }
 
 #bottoms-carousel img {
+  padding-top: 20px;
   width: auto;
   height: 200px;
   margin: 0 auto;
 }
 
 #shoes-carousel img {
+  padding-top: 20px;
   width: auto;
   height: 95px;
   margin: 0 auto;
+}
+
+.seeAll {
+  text-align: center;
+  font-size: 18px;
 }

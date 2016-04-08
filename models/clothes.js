@@ -3,8 +3,11 @@ var Schema = mongoose.Schema;
 
 var ClothesSchema = new Schema ({
   type: String,
-  worn: false,
-
+  description: String,
+  picture: String,
+  max: String,
+  worn: String,
+  dirty: Boolean
 });
 
 var Clothes = ('Clothes', ClothesSchema);

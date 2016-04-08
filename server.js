@@ -1,11 +1,15 @@
 var express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser'),
     db = require("./models"),
-    app = express();
+    controllers = require("./controllers");
+
 
     console.log("i am server.js and I'm running");
 
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 /**********
