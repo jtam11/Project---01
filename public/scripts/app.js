@@ -67,20 +67,25 @@ function sanityError (err) {
 //       bottomsTemplate = Handlebars.compile(bottomsHtml),
 //       shoesTemplate = Handlebars.compile(shoesHtml);
 //
+//   var $hatTarget = $('.hat-item-target'),
+//       $topTarget = $('.top-item-target'),
+//       $bottomTarget = $('.bottom-item-target'),
+//       $shoeTarget = $('.shoe-item-target');
+//
 //   var html;
 //
 //   if (clothes.type === 'Hat') {
 //     html = hatsTemplate(clothes);
-//     $('.hat-item-target').append(html);
+//     $hatTarget.append(html);
 //   } else if (clothes.type === 'Top') {
 //     html = topsTemplate(clothes);
-//     $('.top-item-target').append(html);
+//     $topTarget.append(html);
 //   } else if (clothes.type === 'Bottom') {
 //     html = bottomsTemplate(clothes);
-//     $('.bottom-item-target').append(html);
+//     $bottomTarget.append(html);
 //   } else {
 //     html = shoesTemplate(clothes);
-//     $('.shoe-item-target').append(html);
+//     $shoeTarget.append(html);
 //   }
 // }
 
