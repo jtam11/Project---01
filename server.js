@@ -28,12 +28,9 @@ app.get('/', function homepage (req, res) {
 /*
  * API Endpoints
  */
+app.get('/api', controllers.api.index);
 
-app.get('/api/sanity', function sanity (req, res) {
-  res.json({
-    message: "Hello, World!"
-  });
-});
+app.get('/api/clothes', controllers.clothes.index);
 
 
 
