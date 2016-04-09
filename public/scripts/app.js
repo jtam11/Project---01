@@ -36,7 +36,7 @@ var clothesList =[
   type: 'Shoes',
   description: 'O4',
   picture: 'https://goo.gl/KbDSrP'
-  },
+  }
 
 ];
 
@@ -48,6 +48,9 @@ $(document).ready(function() {
       renderClothes(clothes);
     });
 
+  $('#createClothes').on('click', function(e) {
+    $('#clothesModal').modal();
+  });
 });
 
 function renderClothes(clothes) {

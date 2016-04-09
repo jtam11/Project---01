@@ -33,7 +33,7 @@ app.get('/api', controllers.api.index);
 // Get all clothes
 app.get('/api/clothes', controllers.clothes.index);
 
-
+app.post('/api/clothes', controllers.clothes.create);
 
 
 
