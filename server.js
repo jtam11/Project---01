@@ -30,7 +30,10 @@ app.get('/', function homepage (req, res) {
  */
 app.get('/api', controllers.api.index);
 
+// Get all clothes
 app.get('/api/clothes', controllers.clothes.index);
+
+
 
 
 
