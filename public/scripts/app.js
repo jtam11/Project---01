@@ -51,6 +51,29 @@ $(document).ready(function() {
   $('#createClothes').on('click', function(e) {
     $('#clothesModal').modal();
   });
+
+  $('#saveClothes').on('click', function handleNewClothesSubmit(e) {
+    e.preventDefault();
+    console.log('Add Button Clicked');
+    var $clothesModal = $('#clothesModal'),
+        $clothesType = $clothesModal.find('#type'),
+        $description = $clothesModal.find('#description'),
+        $picture = $clothesModal.find('#picture'),
+        $max = $clothesModal.find('#max');
+    var clothesData = {
+      type: $clothesType.val(),
+      description: $description.val(),
+      picture: $picture.val(),
+      max: $max.val()
+    };
+
+    $.post('/api/clothes', clothesData, function (data) {
+      console.log("add clothes", data);
+      $('.newClothesInput').val('');
+
+      $clothesModal.modal('hide');
+    });
+  });
 });
 
 function renderClothes(clothes) {
