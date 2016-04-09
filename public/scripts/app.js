@@ -1,13 +1,16 @@
 $(document).ready(function() {
   console.log('app.js loaded!');
 
+  // Get All AJAX call
   $.get('/api/clothes').success(function (clothes) {
       renderClothes(clothes);
     });
 
+
   $('#createClothes').on('click', function(e) {
     $('#clothesModal').modal();
   });
+
 
   $('#saveClothes').on('click', function handleNewClothesSubmit(e) {
     e.preventDefault();
@@ -26,7 +29,7 @@ $(document).ready(function() {
 
     $.post('/api/clothes', clothesData, function (data) {
       console.log("add clothes", data);
-      $('.newClothesInput').val('');
+      $('.newClothesInput').val(''); //empties modal input fields
       $clothesModal.modal('hide');
     });
   });
@@ -51,29 +54,20 @@ function renderClothes(clothes) {
 
   var html;
 
-  var allClothes = clothes.forEach(function(items) {
-		var clotheTypes = items.type;
-		if (clotheTypes === 'Hat') {
-      html = hatsTemplate(items);
+  clothes.forEach(function(item) {
+		var clothingType = item.type;
+		if (clothingType === 'Hat') {
+      html = hatsTemplate(item);
       $hatTarget.append(html);
-    } else if (clotheTypes === 'Top') {
-      html = topsTemplate(items);
+    } else if (clothingType === 'Top') {
+      html = topsTemplate(item);
       $topTarget.append(html);
-    } else if (clotheTypes === 'Bottom') {
-      html = bottomsTemplate(items);
+    } else if (clothingType === 'Bottom') {
+      html = bottomsTemplate(item);
       $bottomTarget.append(html);
     } else {
-      html = shoesTemplate(items);
+      html = shoesTemplate(item);
       $shoeTarget.append(html);
     }
   });
 }
-
-
-// function renderClothes(clothes) {
-//   console.log('rendering clothes');
-//   var hatsHtml = $('#hats-template').html();
-//   var hatsTemplate = Handlebars.compile(hatsHtml);
-//   var html = hatsTemplate(clothes[0]);
-//   $('.hat-item-target').append(html);
-// }
