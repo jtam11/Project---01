@@ -1,46 +1,3 @@
-var clothesList =[
-  {
-    type: 'Hat',
-    description: 'Giants Hat',
-    picture: 'http://goo.gl/S78Cdd',
-    max: '10'
-  },
-  {
-    type: 'Top',
-    description: 'Giants Shirt',
-    picture: 'http://goo.gl/TFPN0L',
-    max: '2'
-  },
-  {
-    type: 'Bottom',
-    description: "Black Basketball Shorts",
-    picture: 'http://goo.gl/8SfTrj',
-    max: '2'
-  },
-  {
-    type: 'Shoes',
-    description: 'Orange Flyknits',
-    picture: 'https://goo.gl/KbDSrP'
-  },
-  {
-  type: 'Shoes',
-  description: 'kdjh',
-  picture: 'https://goo.gl/KbDSrP'
-  },
-  {
-  type: 'Shoes',
-  description: '2',
-  picture: 'https://goo.gl/KbDSrP'
-  },
-  {
-  type: 'Shoes',
-  description: 'O4',
-  picture: 'https://goo.gl/KbDSrP'
-  }
-
-];
-
-
 $(document).ready(function() {
   console.log('app.js loaded!');
 
@@ -70,7 +27,6 @@ $(document).ready(function() {
     $.post('/api/clothes', clothesData, function (data) {
       console.log("add clothes", data);
       $('.newClothesInput').val('');
-
       $clothesModal.modal('hide');
     });
   });
