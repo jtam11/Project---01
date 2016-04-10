@@ -18,12 +18,14 @@ $(document).ready(function() {
     });
   });
 
-  $('#clothes').on('click', '.update-clothing', function () {
+  $('#clothes').on('submit', '.update-clothing', function (e) {
+    e.preventDefault();
     var clothingId = $(this).parents('.clothing').data('clothing-id');
     console.log('updating clothing id=' + clothingId );
     $.ajax({
       method: 'PUT',
       url: '/api/clothes/' + clothingId,
+      data: $(this).serialize(),
       success: updateClothingSuccess
     });
   });

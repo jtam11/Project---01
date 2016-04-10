@@ -21,8 +21,26 @@ function destroy(req, res) {
   });
 }
 
+function update (req, res) {
+  console.log("updating with", req.body);
+  db.Clothes.findById(req.params.clothingId, function (err, foundClothing) {
+    foundClothing.picture = req.body.picture;
+    foundClothing.description = req.body.description;
+    foundClothing.max = req.body.max;
+    foundClothing.save(function (err, savedClothing) {
+      if(err) {
+        console.log('update clothing failed');
+        }
+      res.json(savedClothing);
+    });
+  });
+}
+
+
+
 module.exports = {
   index: index,
   create: create,
-  destroy: destroy
+  destroy: destroy,
+  update: update
 };

@@ -104,7 +104,8 @@ app.post('/api/clothes', controllers.clothes.create);
 // Delete a clothing item
 app.delete('/api/clothes/:clothingId', controllers.clothes.destroy);
 
-
+// Update a clothing item
+app.put('/api/clothes/:clothingId', controllers.clothes.update);
 
 /**********
  * SERVER *

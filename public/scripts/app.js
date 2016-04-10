@@ -1,5 +1,3 @@
-var allClothes = [];
-
 $(document).ready(function() {
   console.log('app.js loaded!');
 
@@ -30,6 +28,7 @@ $(document).ready(function() {
 
     $.post('/api/clothes', clothesData, function (data) {
       console.log("add clothes", data);
+
       $('.newClothesInput').val(''); //empties modal input fields
       $clothesModal.modal('hide');
     });
