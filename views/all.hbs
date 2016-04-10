@@ -24,19 +24,21 @@
     <title>Project-01</title>
   </head>
   <body>
-    <h1> All Clothes </h1>
+    <h1> Wardrobe </h1>
     <div id="clothes">
       <script id="clothes-template" type="text/x-handlebars-template">
+        <div class="row clothing" data-clothing-id="\{{id}}">
           <div class="col-md-3">
             <div class="thumbnail">
               <img src="\{{picture}}"></img>
               <br>
               <h4>\{{description}}</h4>
               <hr>
-              <p><a href="#" class="btn btn-sm btn-danger" id="{{id}}">Delete</a></p>
+              <p><button class='btn btn-danger delete-clothing'>Delete</button></p>
               <hr>
             </div>
           </div>
+        </div>
       </script>
     </div>
   </body>

@@ -7,6 +7,16 @@ $(document).ready(function() {
       renderAllClothes(clothes);
     });
   });
+
+  $('#clothes').on('click', '.delete-clothing', function () {
+    var clothingId = $(this).parents('.clothing').data('clothing-id');
+    console.log('deleting clothing id=' + clothingId );
+    $.ajax({
+      url: '/api/clothes/' + clothingId,
+      method: 'DELETE',
+      success: deleteClothingSuccess
+    });
+  });
 });
 
 function renderAllClothes(clothes) {
@@ -14,4 +24,10 @@ function renderAllClothes(clothes) {
   var clothesTemplate = Handlebars.compile(clothesHtml);
   var html = clothesTemplate(clothes);
   $('#clothes').append(html);
+}
+
+function deleteClothingSuccess(data) {
+  var deletedClothingId = data._id;
+  console.log('removing', deletedClothingId);
+  $('div[data-clothing-id=' + deletedClothingId + ']').remove();
 }
