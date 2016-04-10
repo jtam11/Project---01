@@ -8,7 +8,6 @@ $(document).ready(function() {
       renderClothes(clothes);
     });
 
-
   $('#createClothes').on('click', function(e) {
     $('#clothesModal').modal();
   });
@@ -39,6 +38,7 @@ $(document).ready(function() {
 
 function renderClothes(clothes) {
   console.log('rendering clothes');
+
   var hatsHtml = $('#hats-template').html(),
       topsHtml = $('#tops-template').html(),
       bottomsHtml = $('#bottoms-template').html(),
