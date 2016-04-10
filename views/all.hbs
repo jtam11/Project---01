@@ -34,7 +34,26 @@
               <br>
               <p>\{{description}}</p>
               <hr>
-              <p><button class='btn btn-danger delete-clothing'>Delete</button></p>
+              <div class="collapse" id="update-\{{_id}}">
+                <br>
+                <form class="form-inline update-clothing">
+                  <div class="form-group">
+                    <input type="text" name="picture" class="form-control" placeholder="http://" value="\{{picture}}">
+                  </div>
+                  <div class="form-group">
+                    <label class="col-md-4 control-label" for="description">Description:</label>
+                    <input type="text" name="description" class="form-control" placeholder="Description" value="\{{description}}">
+                  </div>
+                  <div class="form-group">
+                    <input type="text" name="max" class="form-control" placeholder="max" value="\{{max}}">
+                  </div>
+                  <div class="form-group">
+                    <input type="submit" class="btn btn-block btn-default" value="Update">
+                  </div>
+                </form>
+              </div>
+              <p><button class='btn btn-danger delete-clothing'>Delete</button>
+              <button class='btn btn-default update-clothing' data-toggle="collapse" data-target="#update-\{{_id}}">Edit</button></p>
             </div>
           </div>
         </div>
