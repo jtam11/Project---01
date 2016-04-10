@@ -17,6 +17,16 @@ $(document).ready(function() {
       success: deleteClothingSuccess
     });
   });
+
+  $('#clothes').on('click', '.update-clothing', function () {
+    var clothingId = $(this).parents('.clothing').data('clothing-id');
+    console.log('updating clothing id=' + clothingId );
+    $.ajax({
+      method: 'PUT',
+      url: '/api/clothes/' + clothingId,
+      success: updateClothingSuccess
+    });
+  });
 });
 
 function renderAllClothes(clothes) {
@@ -30,4 +40,10 @@ function deleteClothingSuccess(data) {
   var deletedClothingId = data._id;
   console.log('removing', deletedClothingId);
   $('div[data-clothing-id=' + deletedClothingId + ']').remove();
+}
+
+function updateClothingSuccess(data) {
+  var updatedClothingId = data._id;
+  $('[data-clothing-id=' + updatedClothingId + ']').remove();
+  renderAllClothes(data);
 }
