@@ -1,16 +1,20 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     passportLocalMongoose = require('passport-local-mongoose'),
-    clothes = require ('./clothes');
+    Clothes = require('./clothes');
 
-var UserSchema = new Schema (
-  {
+var UserSchema = new Schema ({
     username: String,
     password: String,
-    clothes: [ Clothes.schema ]
+    clothes: [{
+              type: Schema.Types.ObjectId,
+              ref: 'Clothes'
+    }]
 });
 
-UserSchema.plugin(passportLocalMongoose);
+UserSchema.plugin(passportLocalMongoose, {
+    populateFields: 'clothes'
+});
 
 var User = mongoose.model('User', UserSchema);
-module.exports = Album;
+module.exports = User;

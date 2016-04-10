@@ -1,3 +1,5 @@
+var allClothes = [];
+
 $(document).ready(function() {
   console.log('app.js loaded!');
 

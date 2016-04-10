@@ -43,11 +43,11 @@ app.set('view engine', 'hbs');
  */
 
 app.get('/', function homepage (req, res) {
-  res.sendFile(__dirname + '/views/index.html');
+  res.render('index');
 });
 
 app.get('/all', function (req, res) {
-  res.sendFile(__dirname + '/views/all.html');
+  res.render('all');
 });
 
 // AUTH ROUTES
