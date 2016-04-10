@@ -101,6 +101,9 @@ app.get('/api/clothes', controllers.clothes.index);
 // Add a clothing item
 app.post('/api/clothes', controllers.clothes.create);
 
+// Delete a clothing item
+app.delete('/api/clothes/:clothingId', controllers.clothes.destroy);
+
 
 
 /**********

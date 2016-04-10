@@ -15,7 +15,14 @@ function create(req, res) {
   });
 }
 
+function destroy(req, res) {
+  db.Clothes.findOneAndRemove({_id: req.params.clothingId}, function(err, foundClothing){
+    res.json(foundClothing);
+  });
+}
+
 module.exports = {
   index: index,
-  create: create
+  create: create,
+  destroy: destroy
 };
