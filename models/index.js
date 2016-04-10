@@ -3,3 +3,4 @@ mongoose.connect("mongodb://localhost/3000");
 
 
 module.exports.Clothes = require('./clothes');
+module.exports.User = require('./user');
