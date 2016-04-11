@@ -93,9 +93,11 @@ app.get('/logout', function (req, res) {
 /*
  * API Endpoints
  */
+
+// Show all API Endpoints
 app.get('/api', controllers.api.index);
 
-// Get all clothes
+// Show all clothes
 app.get('/api/clothes', controllers.clothes.index);
 
 // Add a clothing item
@@ -106,6 +108,9 @@ app.delete('/api/clothes/:clothingId', controllers.clothes.destroy);
 
 // Update a clothing item
 app.put('/api/clothes/:clothingId', controllers.clothes.update);
+
+// Show one article of clothing
+app.get('/api/clothes/:clothingId', controllers.clothes.show);
 
 /**********
  * SERVER *

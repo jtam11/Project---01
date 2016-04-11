@@ -7,6 +7,7 @@ function index(req, res) {
       {method: "GET", path: "/api", description: "Describes available endpoints"},
       {method: "GET", path: "/api/clothes", description: "Shows all clothes"},
       {method: "POST", path: "/api/clothes", description: "Adds new clothing"},
+      {method: "GET", path: "/api/clothes/:clothingId", description: "Shows an article of clothing"},
       {method: "DELETE", path: "/api/clothes/:clothingId", description: "Deletes an article of clothing"},
       {method: "PUT", path: "/api/clothes/:clothingId", description: "Updates an article of clothing"},
       {method: "GET", path: "/signup", description: "Show signup form"},

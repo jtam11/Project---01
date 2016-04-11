@@ -24,15 +24,23 @@ function destroy(req, res) {
 function update (req, res) {
   console.log("updating with", req.body);
   db.Clothes.findById(req.params.clothingId, function (err, foundClothing) {
+    console.log(foundClothing);
     foundClothing.picture = req.body.picture;
     foundClothing.description = req.body.description;
     foundClothing.max = req.body.max;
     foundClothing.save(function (err, savedClothing) {
       if(err) {
-        console.log('update clothing failed');
+        console.log('update clothing failed', err);
         }
       res.json(savedClothing);
     });
+  });
+}
+
+function show (req, res) {
+  db.Clothes.findById(req.params.clothingId, function (err, foundClothing) {
+    console.log('showing one article of clothing:', foundClothing);
+    res.json(foundClothing);
   });
 }
 
@@ -42,5 +50,6 @@ module.exports = {
   index: index,
   create: create,
   destroy: destroy,
-  update: update
+  update: update,
+  show: show
 };
