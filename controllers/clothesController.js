@@ -14,9 +14,14 @@ function create(req, res) {
 }
 
 function destroy(req, res) {
+  var deletedClothing = req.user.clothes.id(req.params.clothingId);
   req.user.clothes.id(req.params.clothingId).remove();
   req.user.save( function (err, foundClothing) {
-    res.json(foundClothing);
+    if(err) {
+      console.log('destroy error:', err);
+    }
+    console.log(foundClothing);
+    res.json(deletedClothing);
   });
   // db.Clothes.findOneAndRemove({_id: req.params.clothingId}, function(err, foundClothing){
   //   res.json(foundClothing);
