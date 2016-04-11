@@ -90,12 +90,13 @@ function renderAllClothes(clothes) {
 
 function deleteClothingSuccess(data) {
   var deletedClothingId = data._id;
-  console.log('removing', deletedClothingId);
+  console.log('removed', deletedClothingId);
   $('div[data-clothing-id=' + deletedClothingId + ']').remove();
 }
 
 function updateClothingSuccess(data) {
   var updatedClothingId = data._id;
+  console.log('updated', updatedClothingId);
   $('[data-clothing-id=' + updatedClothingId + ']').remove();
   renderAllClothes(data);
 }

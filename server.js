@@ -43,11 +43,11 @@ app.set('view engine', 'hbs');
  */
 
 app.get('/', function homepage (req, res) {
-  res.render('index');
+  res.render('index', {user: JSON.stringify(req.user) + " || null"});
 });
 
 app.get('/wardrobe', function (req, res) {
-  res.render('all');
+  res.render('wardrobe', {user: JSON.stringify(req.user) + " || null"});
 });
 
 // AUTH ROUTES
