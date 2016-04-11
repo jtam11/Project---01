@@ -112,6 +112,9 @@ app.put('/api/clothes/:clothingId', controllers.clothes.update);
 // Show one article of clothing
 app.get('/api/clothes/:clothingId', controllers.clothes.show);
 
+// Show all clothes of the same type
+app.get('/api/clothes/type/:type', controllers.clothes.type);
+
 /**********
  * SERVER *
  **********/

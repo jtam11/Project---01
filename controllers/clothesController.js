@@ -44,6 +44,12 @@ function show (req, res) {
   });
 }
 
+function type (req, res) {
+  db.Clothes.find({type: req.params.type}, function (err, foundClothes) {
+    res.json(foundClothes);
+  });
+}
+
 
 
 module.exports = {
@@ -51,5 +57,6 @@ module.exports = {
   create: create,
   destroy: destroy,
   update: update,
-  show: show
+  show: show,
+  type: type
 };
