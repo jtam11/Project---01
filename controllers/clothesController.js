@@ -20,7 +20,6 @@ function destroy(req, res) {
     if(err) {
       console.log('destroy error:', err);
     }
-    console.log(foundClothing);
     res.json(deletedClothing);
   });
   // db.Clothes.findOneAndRemove({_id: req.params.clothingId}, function(err, foundClothing){
@@ -30,8 +29,9 @@ function destroy(req, res) {
 
 function update (req, res) {
   console.log("updating with", req.body);
-  db.Clothes.findById(req.params.clothingId, function (err, foundClothing) {
-    console.log(foundClothing);
+  var updatedClothing = req.user.clothes.id(req.params.clothingId);
+  req.user.clothes.id(req.params.clothingId, function (err, foundClothing) {
+    console.log('found clothing =', foundClothing);
     foundClothing.picture = req.body.picture;
     foundClothing.description = req.body.description;
     foundClothing.max = req.body.max;
@@ -45,10 +45,7 @@ function update (req, res) {
 }
 
 function show (req, res) {
-  db.Clothes.findById(req.params.clothingId, function (err, foundClothing) {
-    console.log('showing one article of clothing:', foundClothing);
-    res.json(foundClothing);
-  });
+    res.json( req.user.clothes.id(req.params.clothingId) );
 }
 
 function type (req, res) {
