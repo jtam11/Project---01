@@ -43,7 +43,11 @@ app.set('view engine', 'hbs');
  */
 
 app.get('/', function homepage (req, res) {
-  res.render('index', {user: JSON.stringify(req.user) + " || null"});
+  if (req.user) {
+    res.render('index', {user: JSON.stringify(req.user) + " || null"});
+  } else {
+    res.redirect('login'); //redirect to login if not
+  }
 });
 
 app.get('/wardrobe', function (req, res) {

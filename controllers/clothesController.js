@@ -7,11 +7,12 @@ function index(req, res) {
 }
 
 function create(req, res) {
-  var newClothes = new db.Clothes(req.body);
-  console.log(newClothes);
-  newClothes.save(function (err, savedClothing) {
-    res.json(savedClothing);
-  });
+  if (req.user) {
+    req.user.clothes.push(req.body);
+    req.user.save( function (err, savedClothing) {
+      res.json(savedClothing);
+    });
+  }
 }
 
 function destroy(req, res) {

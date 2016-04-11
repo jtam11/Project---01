@@ -6,10 +6,7 @@ var mongoose = require('mongoose'),
 var UserSchema = new Schema ({
     username: String,
     password: String,
-    clothes: [{
-              type: Schema.Types.ObjectId,
-              ref: 'Clothes'
-    }]
+    clothes: [ Clothes.schema ]
 });
 
 UserSchema.plugin(passportLocalMongoose, {
