@@ -1,6 +1,15 @@
 $(document).ready(function() {
   console.log('app.js loaded!');
 
+  var clothesHtml = $('#clothes-template').html();
+  var clothesTemplate = Handlebars.compile(clothesHtml);
+  
+  function renderAllClothes(clothes) {
+    var html = clothesTemplate(clothes);
+    $('#clothes').append(html);
+  }
+
+
   // Get All AJAX call
   $.get('/api/clothes', function (json) {
     json.forEach(function (clothes) {
@@ -10,8 +19,8 @@ $(document).ready(function() {
 
   $('.btn-group').on('click', '#all', function (e) {
     e.preventDefault();
+    $('#clothes').empty();
     $.get('/api/clothes', function (json) {
-      $('.thumbnail').remove();
       json.forEach(function (clothes) {
         renderAllClothes(clothes);
       });
@@ -20,8 +29,8 @@ $(document).ready(function() {
 
   $('.btn-group').on('click', '#allHats', function (e) {
     e.preventDefault();
+    $('#clothes').empty();
     $.get('/api/clothes/type/Hat', function (json) {
-      $('.thumbnail').remove();
       json.forEach(function (clothes) {
         renderAllClothes(clothes);
       });
@@ -30,8 +39,8 @@ $(document).ready(function() {
 
   $('.btn-group').on('click', '#allTops', function (e) {
     e.preventDefault();
+    $('#clothes').empty();
     $.get('/api/clothes/type/Top', function (json) {
-      $('.thumbnail').remove();
       json.forEach(function (clothes) {
         renderAllClothes(clothes);
       });
@@ -40,8 +49,8 @@ $(document).ready(function() {
 
   $('.btn-group').on('click', '#allBottoms', function (e) {
     e.preventDefault();
+    $('#clothes').empty();
     $.get('/api/clothes/type/Bottom', function (json) {
-      $('.thumbnail').remove();
       json.forEach(function (clothes) {
         renderAllClothes(clothes);
       });
@@ -50,8 +59,8 @@ $(document).ready(function() {
 
   $('.btn-group').on('click', '#allShoes', function (e) {
     e.preventDefault();
+    $('#clothes').empty();
     $.get('/api/clothes/type/Shoes', function (json) {
-      $('.thumbnail').remove();
       json.forEach(function (clothes) {
         renderAllClothes(clothes);
       });
@@ -80,13 +89,6 @@ $(document).ready(function() {
     });
   });
 });
-
-function renderAllClothes(clothes) {
-  var clothesHtml = $('#clothes-template').html();
-  var clothesTemplate = Handlebars.compile(clothesHtml);
-  var html = clothesTemplate(clothes);
-  $('#clothes').append(html);
-}
 
 function deleteClothingSuccess(data) {
   var deletedClothingId = data._id;
