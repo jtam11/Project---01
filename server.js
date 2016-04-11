@@ -51,7 +51,9 @@ app.get('/', function homepage (req, res) {
 });
 
 app.get('/wardrobe', function (req, res) {
-  res.render('wardrobe', {user: JSON.stringify(req.user) + " || null"});
+  if (req.user) {
+    res.render('wardrobe', {user: JSON.stringify(req.user) + " || null"});
+  }
 });
 
 // AUTH ROUTES

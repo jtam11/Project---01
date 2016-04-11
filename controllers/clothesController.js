@@ -1,9 +1,9 @@
 var db = require('../models');
 
 function index(req, res) {
-  db.Clothes.find({}, function(err, allClothes) {
-    res.json(allClothes);
-  });
+  console.log('req.user =', req.user.clothes);
+  console.log('db.Clothes =', db.Clothes);
+  res.json(req.user.clothes);
 }
 
 function create(req, res) {
