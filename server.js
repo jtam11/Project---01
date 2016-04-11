@@ -54,7 +54,7 @@ app.get('/all', function (req, res) {
 
 // show signup view
 app.get('/signup', function (req, res) {
-  res.render('signup'); // you can also use res.sendFile
+  res.render('signup');
 });
 
 // sign up new user, then log them in
@@ -72,7 +72,7 @@ app.post('/signup', function (req, res) {
 
 // show login view
 app.get('/login', function (req, res) {
-  res.render('login'); // you can also use res.sendFile
+  res.render('login');
 });
 
 // log in user
