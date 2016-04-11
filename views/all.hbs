@@ -25,10 +25,28 @@
   </head>
   <body>
     <h1> Wardrobe </h1>
+    <a class="btn btn-default" href="/" role="button">Back</a>
+    <div class="btn-group" data-toggle="buttons">
+      <label class="btn btn-primary active" id="all">
+        <input type="radio" name="options"  autocomplete="off" checked> All
+      </label>
+      <label class="btn btn-primary" id="allHats">
+        <input type="radio" name="options"  autocomplete="off"> Hats
+      </label>
+      <label class="btn btn-primary" id="allTops">
+        <input type="radio" name="options"  autocomplete="off"> Tops
+      </label>
+      <label class="btn btn-primary" id="allBottoms">
+        <input type="radio" name="options"  autocomplete="off"> Bottoms
+      </label>
+      <label class="btn btn-primary" id="allShoes">
+        <input type="radio" name="options"  autocomplete="off"> Shoes
+      </label>
+    </div>
     <div id="clothes">
       <script id="clothes-template" type="text/x-handlebars-template">
         <div class="row clothing" data-clothing-id="\{{_id}}">
-          <div class="col-md-3">
+          <div class="col-md-3" id="blarg">
             <div class="text-center thumbnail">
               <img src="\{{picture}}"></img>
               <br>

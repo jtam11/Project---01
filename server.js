@@ -46,7 +46,7 @@ app.get('/', function homepage (req, res) {
   res.render('index');
 });
 
-app.get('/all', function (req, res) {
+app.get('/wardrobe', function (req, res) {
   res.render('all');
 });
 

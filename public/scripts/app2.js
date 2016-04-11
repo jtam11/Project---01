@@ -8,6 +8,56 @@ $(document).ready(function() {
     });
   });
 
+  $('.btn-group').on('click', '#all', function (e) {
+    e.preventDefault();
+    $.get('/api/clothes', function (json) {
+      $('.thumbnail').remove();
+      json.forEach(function (clothes) {
+        renderAllClothes(clothes);
+      });
+    });
+  });
+
+  $('.btn-group').on('click', '#allHats', function (e) {
+    e.preventDefault();
+    $.get('/api/clothes/type/Hat', function (json) {
+      $('.thumbnail').remove();
+      json.forEach(function (clothes) {
+        renderAllClothes(clothes);
+      });
+    });
+  });
+
+  $('.btn-group').on('click', '#allTops', function (e) {
+    e.preventDefault();
+    $.get('/api/clothes/type/Top', function (json) {
+      $('.thumbnail').remove();
+      json.forEach(function (clothes) {
+        renderAllClothes(clothes);
+      });
+    });
+  });
+
+  $('.btn-group').on('click', '#allBottoms', function (e) {
+    e.preventDefault();
+    $.get('/api/clothes/type/Bottom', function (json) {
+      $('.thumbnail').remove();
+      json.forEach(function (clothes) {
+        renderAllClothes(clothes);
+      });
+    });
+  });
+
+  $('.btn-group').on('click', '#allShoes', function (e) {
+    e.preventDefault();
+    $.get('/api/clothes/type/Shoes', function (json) {
+      $('.thumbnail').remove();
+      json.forEach(function (clothes) {
+        renderAllClothes(clothes);
+      });
+    });
+  });
+
   $('#clothes').on('click', '.delete-clothing', function () {
     var clothingId = $(this).parents('.clothing').data('clothing-id');
     console.log('deleting clothing id=' + clothingId );
