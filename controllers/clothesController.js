@@ -1,8 +1,6 @@
 var db = require('../models');
 
 function index(req, res) {
-  console.log('req.user =', req.user.clothes);
-  console.log('db.Clothes =', db.Clothes);
   res.json(req.user.clothes);
 }
 
@@ -16,9 +14,13 @@ function create(req, res) {
 }
 
 function destroy(req, res) {
-  db.Clothes.findOneAndRemove({_id: req.params.clothingId}, function(err, foundClothing){
+  req.user.clothes.id(req.params.clothingId).remove();
+  req.user.save( function (err, foundClothing) {
     res.json(foundClothing);
   });
+  // db.Clothes.findOneAndRemove({_id: req.params.clothingId}, function(err, foundClothing){
+  //   res.json(foundClothing);
+  // });
 }
 
 function update (req, res) {
