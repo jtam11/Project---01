@@ -3,10 +3,17 @@ $(document).ready(function() {
 
   var clothesHtml = $('#clothes-template').html();
   var clothesTemplate = Handlebars.compile(clothesHtml);
-  
+
   function renderAllClothes(clothes) {
     var html = clothesTemplate(clothes);
     $('#clothes').append(html);
+  }
+
+  function updateClothingSuccess(data) {
+    var updatedClothingId = data._id;
+    console.log('updated', updatedClothingId);
+    $('[data-clothing-id=' + updatedClothingId + ']').remove();
+    renderAllClothes(data);
   }
 
 
@@ -17,6 +24,7 @@ $(document).ready(function() {
     });
   });
 
+  // Show all clothes when "All" button is clicked
   $('.btn-group').on('click', '#all', function (e) {
     e.preventDefault();
     $('#clothes').empty();
@@ -27,6 +35,7 @@ $(document).ready(function() {
     });
   });
 
+  // Show all hats when "Hats" button is clicked
   $('.btn-group').on('click', '#allHats', function (e) {
     e.preventDefault();
     $('#clothes').empty();
@@ -37,6 +46,7 @@ $(document).ready(function() {
     });
   });
 
+  // Show all tops when "Tops" button is clicked
   $('.btn-group').on('click', '#allTops', function (e) {
     e.preventDefault();
     $('#clothes').empty();
@@ -47,6 +57,7 @@ $(document).ready(function() {
     });
   });
 
+  // Show all bottoms when "Bottoms" button is clicked
   $('.btn-group').on('click', '#allBottoms', function (e) {
     e.preventDefault();
     $('#clothes').empty();
@@ -57,6 +68,7 @@ $(document).ready(function() {
     });
   });
 
+  // Show all shoes when "Shoes" button is clicked
   $('.btn-group').on('click', '#allShoes', function (e) {
     e.preventDefault();
     $('#clothes').empty();
@@ -67,6 +79,7 @@ $(document).ready(function() {
     });
   });
 
+  // Delete clothing item when it's delete button is clicked
   $('#clothes').on('click', '.delete-clothing', function () {
     var clothingId = $(this).parents('.clothing').data('clothing-id');
     console.log('deleting clothing id=' + clothingId );
@@ -77,6 +90,7 @@ $(document).ready(function() {
     });
   });
 
+  // Update clothing item when "Update" is clicked, and re-render
   $('#clothes').on('submit', '.update-clothing', function (e) {
     e.preventDefault();
     var clothingId = $(this).parents('.clothing').data('clothing-id');
@@ -89,6 +103,13 @@ $(document).ready(function() {
     });
   });
 });
+
+function renderAllClothes(clothes) {
+  var clothesHtml = $('#clothes-template').html();
+  var clothesTemplate = Handlebars.compile(clothesHtml);
+  var html = clothesTemplate(clothes);
+  $('#clothes').append(html);
+}
 
 function deleteClothingSuccess(data) {
   var deletedClothingId = data._id;
