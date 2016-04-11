@@ -30,17 +30,17 @@ function destroy(req, res) {
 function update (req, res) {
   console.log("updating with", req.body);
   var updatedClothing = req.user.clothes.id(req.params.clothingId);
-  req.user.clothes.id(req.params.clothingId, function (err, foundClothing) {
-    console.log('found clothing =', foundClothing);
-    foundClothing.picture = req.body.picture;
-    foundClothing.description = req.body.description;
-    foundClothing.max = req.body.max;
-    foundClothing.save(function (err, savedClothing) {
-      if(err) {
-        console.log('update clothing failed', err);
-        }
-      res.json(savedClothing);
-    });
+  console.log("this is what updatedCLothing is", updatedClothing);
+  updatedClothing.picture = req.body.picture;
+  updatedClothing.description = req.body.description;
+  updatedClothing.max = req.body.max;
+  console.log("new updated clothing is:", updatedClothing);
+  req.user.save(function (err, savedClothing) {
+    if(err) {
+      console.log('update clothing failed', err);
+      }
+      console.log("this is being saved:", savedClothing);
+    res.json(updatedClothing);
   });
 }
 
@@ -49,9 +49,7 @@ function show (req, res) {
 }
 
 function type (req, res) {
-  db.Clothes.find({type: req.params.type}, function (err, foundClothes) {
-    res.json(foundClothes);
-  });
+  res.json( req.user.clothes.find({'clothes.type': req.params.type}) );
 }
 
 
