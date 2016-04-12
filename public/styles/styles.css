@@ -12,24 +12,39 @@ h1 {
   color: white;
 }
 
-#wear {
-  color: black;
+#logout-btn {
+  position: absolute;
+  top: 13%;
+  right: 11%;
+}
+#wardrobe-btn {
+  position:absolute;
+  top: 70%;
+  right: 10%;
+}
+
+#createClothes {
+  position:absolute;
+  top: 70%;
+  left: 10%;
 }
 
 .panel {
   border: 0;
   background-color: transparent;
 }
+
 .panel-footer {
   padding-top: 20px;
   background-color: transparent;
   border: 0;
   text-align: center;
 }
+
 #hats-carousel img {
   padding-top: 20px;
   width: auto;
-  height: 90px;
+  height: 95px;
   margin: 0 auto;
 }
 
@@ -50,7 +65,7 @@ h1 {
 #shoes-carousel img {
   padding-top: 20px;
   width: auto;
-  height: 95px;
+  height: 100px;
   margin: 0 auto;
 }
 
@@ -79,24 +94,32 @@ h1 {
 /*Log In Styling Starts Here*/
 .log-in-form {
   color: white;
+  padding: 10px;
   border: 1px solid white;
   border-radius: 3px;
 }
 
 #logincontainer {
-  position: absolute;
-  margin-top: 20%;
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
 .sign-up-form {
   color: white;
+  padding: 10px;
   border: 1px solid white;
   border-radius: 3px;
 }
 
 #signupcontainer {
-  position: absolute;
-  margin-top: 20%;
-  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
