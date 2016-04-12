@@ -22,9 +22,6 @@ function destroy(req, res) {
     }
     res.json(deletedClothing);
   });
-  // db.Clothes.findOneAndRemove({_id: req.params.clothingId}, function(err, foundClothing){
-  //   res.json(foundClothing);
-  // });
 }
 
 function update (req, res) {

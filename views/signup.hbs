@@ -17,6 +17,12 @@
   <title>Sign up!</title>
 </head>
   <body>
+    <div class="container">
+      <div class="page-header text-center">
+        <h1>wt<strong>2</strong>wr</h1>
+        <p>finding the right fit just got easier</p>
+      </div>
+    </div>
 <!-- signup.hbs -->
     <div class="row">
       <div class="container" id=signupcontainer>
@@ -24,6 +30,7 @@
         <form method="POST" action="/signup">
           <div class="row column sign-up-form">
             <h4 class="text-center">Sign Up</h4>
+            <hr>
             <label>Username
               <input type="text" name="username" class="form-control username" placeholder="Username" autofocus>
             </label>
@@ -31,6 +38,7 @@
               <input type="password" name="password" class="form-control password" placeholder="Password">
             </label>
             <p><input type="submit" class="btn btn-block btn-primary" id="sign-up-btn" value="Sign Up"></p>
+            <p class="text-center"><a href="/login">Already a user? Log in!</a></p>
           </div>
         </form>
 

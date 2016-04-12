@@ -1,8 +1,8 @@
 function index(req, res) {
   res.json({
     message: "Welcome to my app!!",
-    documentation_url: "",
-    base_url: "",
+    documentation_url: "https://github.com/jtam11/Project-01",
+    base_url: "https://tranquil-scrubland-44832.herokuapp.com",
     endpoints: [
       {method: "GET", path: "/api", description: "Describes available endpoints"},
       {method: "GET", path: "/api/clothes", description: "Shows all clothes"},
