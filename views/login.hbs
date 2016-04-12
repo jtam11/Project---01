@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- VENDOR STYLESHEETS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'>
   <!-- CUSTOM STYLESHEET -->
   <link rel="stylesheet" href="styles/styles.css">
+
+  <!-- VENDOR SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-2.2.3.js"
+  integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="
+  crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
   <title>Log In</title>
 </head>
   <body>
     <!-- login.hbs -->
-    <h2>Log In</h2>
-    <br>
-    <form method="POST" action="/login">
-      <div class="form-group">
-        <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4 text-center" id=logincontainer>
+
+        <form method="POST" action="/login">
+          <div class="row column log-in-form">
+            <h4 class="text-center">Log In</h4>
+            <label>Username
+              <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
+            </label>
+            <label>Password
+              <input type="password" name="password" class="form-control" placeholder="Password">
+            </label>
+            <p><input type="submit" class="btn btn-block btn-primary" value="Log In"></p>
+            <p class="text-center"><a href="/signup">Not a user? Sign up!</a></p>
+          </div>
+        </form>
+
       </div>
-      <div class="form-group">
-        <input type="password" name="password" class="form-control" placeholder="Password">
-      </div>
-      <div class="form-group">
-        <input type="submit" class="btn btn-block btn-primary" value="Log In">
-      </div>
-    </form>
-    <p>Not a user?<a class="btn btn-default" href="/signup" role="button">Sign Up!</a></p>
+    </div>
   </body>
 </html>

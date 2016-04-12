@@ -1,11 +1,12 @@
 body {
-  background-image: url(https://snap-photos.s3.amazonaws.com/img-thumbs/960w/D1B0FAEB46.jpg);
+  background-image: url("../images/wardrobe_background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 h1 {
+  font-family: 'Anton', sans-serif;
   text-align: center;
   font-size: 100px;
   color: white;
@@ -54,6 +55,7 @@ h1 {
 }
 
 #clothes h4 {
+  font-family: 'Anton', sans-serif;
   color: white;
   font-size: 30px;
   margin: 0 auto;
@@ -72,4 +74,17 @@ h1 {
 .thumbnail {
   width: 200px;
   height: auto;
+}
+
+/*Log In Styling Starts Here*/
+.log-in-form {
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+#logincontainer {
+  position: absolute;
+  margin-top: 20%;
+  text-align: center;
 }
