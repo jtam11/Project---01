@@ -88,3 +88,15 @@ h1 {
   margin-top: 20%;
   text-align: center;
 }
+
+.sign-up-form {
+  color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+}
+
+#signupcontainer {
+  position: absolute;
+  margin-top: 20%;
+  text-align: center;
+}
