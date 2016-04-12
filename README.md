@@ -1,4 +1,4 @@
-# Project-01 "wt2wr"
+# Project-01 "wt2wr" (What to wear)
 wt2wr filters and displays clothing items uploaded by the user into four carousels.
 The user can scroll through each carousel to plan an outfit from head to toe.
 
@@ -18,7 +18,7 @@ heroku link: https://tranquil-scrubland-44832.herokuapp.com
 * App takes in users (signup/login/logout)
 * Each user can CRUD their own clothes.
 * Carousels that allow user to scroll through their clothing
-* User can filter through their wardrobe by type
+* User can filter through their wardrobe by type of clothing
 
 ## Planned Features
 * User can upload pictures directly
