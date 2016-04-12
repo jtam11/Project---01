@@ -48,8 +48,13 @@ function show (req, res) {
     res.json( req.user.clothes.id(req.params.clothingId) );
 }
 
+
 function type (req, res) {
-  res.json( req.user.clothes.find({'clothes.type': req.params.type}) );
+  var userType = req.user.clothes;
+  var returnType = userType.filter(function(foundItems) {
+    return foundItems.type == req.params.type;
+  });
+  res.json(returnType);
 }
 
 
